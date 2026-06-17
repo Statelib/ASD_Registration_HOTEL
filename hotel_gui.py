@@ -1,30 +1,22 @@
 # -*- coding: utf-8 -*-
-"""
-  ГРАФИЧЕСКИЙ ИНТЕРФЕЙС (GUI)
-  для системы «Регистрация постояльцев в гостинице»
-
-Запуск:python3 hotel_gui.py
-(файл hotel.py должен лежать в той же папке)
-"""
 
 import tkinter as tk
 from tkinter import ttk, messagebox
 import datetime
 
-# Импортируем готовое «ядро» системы — никакой логики здесь не дублируется.
 from hotel import (
     HotelSystem,
     ROOM_TYPES,
 )
 
-#  ГЛАВНЫЙ КЛАСС ПРИЛОЖЕНИЯ
+
 
 class HotelApp:
     def __init__(self, root):
         self.root = root
-        self.system = HotelSystem()      # экземпляр системы (все структуры данных)
+        self.system = HotelSystem()      
 
-        self.root.title("Регистрация постояльцев в гостинице Shirshov DE 4431KZ")
+        self.root.title("Регистрация постояльцев в гостинице ")
         self.root.geometry("1000x640")
         self.root.minsize(860, 560)
 
@@ -41,7 +33,6 @@ class HotelApp:
     #  Оформление
     def _setup_style(self):
         style = ttk.Style()
-        # Тема 'clam' выглядит опрятнее системной на большинстве ОС
         try:
             style.theme_use("clam")
         except tk.TclError:
